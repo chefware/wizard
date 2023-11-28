@@ -66,7 +66,8 @@ adduser chefware
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Aguarde um momento enquanto baixamos o sistema Chefware na sua máquina :)"
 sleep 2
 
-git clone https://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:x-oauth-basic@github.com/chefware/chefware-jar.git
+git clone https://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:x-oauth-basic@github.com/chefware/chefware-jar.git
+
 clear
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Irei configurar o seu banco de dados, aguarde um instante"
 sleep 2
