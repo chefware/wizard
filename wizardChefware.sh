@@ -61,11 +61,13 @@ if [ $? -eq 0 ]
 		fi		
 fi
 
+adduser chefware
+
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Aguarde um momento enquanto baixamos o sistema Chefware na sua máquina :)"
 sleep 2
 
-git clone https://github.com/chefware/sistema-chefware.git
-
+git clone https://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@github.com/chefware/chefware-jar.git
+clear
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Irei configurar o seu banco de dados, aguarde um instante"
 sleep 2
 
@@ -77,15 +79,7 @@ if [ $? != 0 ]
 		sudo systemctl enable docker
 fi
 
-#cat >'Dockerfile' <<EOT
-#FROM mysql:latest
-#ENV MYSQL_ROOT_PASSWORD=9090
-#COPY ./arquivos_sql/ /docker-entrypoint-initdb.d/
-#EXPOSE 3306
-#EOT
-
-
-cd sistema-chefware/container && sudo docker build -t chefware-banco .
+cd chefware-jar/container && sudo docker build -t chefware-banco .
 
 sudo docker run -d --name container-banco -p 3306:3306 chefware-banco
 clear
@@ -93,11 +87,14 @@ sleep 2
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Tudo pronto, deseja rodar nosso programa agora? (y/n)"
 
 read escolha1
-sleep 2
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Nós da Chefware agradecemos a sua preferência :)"
 sleep 2
 
 if [ \"$escolha1\" == \"y\" ]
 	then
-		cd .. && java -jar chefware.jar
+		cd ../ChefwareLooca && chmod +x chefware-0.0.1-SNAPSHOT.jar
+		java -jar chefware-0.0.1-SNAPSHOT.jar
+
 fi
+
+#alias executavel_chefware='sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT && sudo iptables -nL |grep 8080 && cd /home/urubu100/chefware-jar/ChefwareLooca && java -jar chefware-0.0.1-SNAPSHOT.jar'
