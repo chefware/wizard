@@ -85,6 +85,8 @@ fi
 cd chefware-jar/container && sudo docker build -t chefware-banco .
 
 sudo docker run -d --name container-banco -p 3306:3306 chefware-banco
+sleep 2
+sudo docker start container-banco
 clear
 sleep 2
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Tudo pronto, deseja rodar nosso programa agora? (y/n)"
