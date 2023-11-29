@@ -95,9 +95,7 @@ read escolha1
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Nós da Chefware agradecemos a sua preferência :)"
 sleep 2
 
-		cd ../ChefwareLooca && chmod +x chefware-1.0.0.jar
-		java -jar chefware-1.0.0.jar
-
-fi
+cd ../ChefwareLooca && chmod +x chefware-1.0.0.jar
+java -jar chefware-1.0.0.jar
 
 #alias executavel_chefware='sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT && sudo iptables -nL |grep 8080 && cd /home/urubu100/chefware-jar/ChefwareLooca && java -jar chefware-0.0.1-SNAPSHOT.jar'
