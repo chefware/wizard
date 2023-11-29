@@ -95,8 +95,6 @@ read escolha1
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Nós da Chefware agradecemos a sua preferência :)"
 sleep 2
 
-if [ \"$escolha1\" == \"y\" ]
-	then
 		cd ../ChefwareLooca && chmod +x chefware-1.0.0.jar
 		java -jar chefware-1.0.0.jar
 
