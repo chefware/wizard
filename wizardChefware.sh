@@ -40,25 +40,20 @@ if [ $? -eq 0 ]
 		sleep 2 
 		echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Gostaria de intstalar o Java? (y/n)"
 		read escolha
-		if [ \"$escolha\" == \"y\" ]
-			then
-				echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Fico feliz que optou por instalar o Java, irei atualizar os pacotes, aguarde um instante..."
-				sleep 2
-				
-				sudo apt update -y
-				clear
-				
-				echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Instalando Java..."
-				sleep 2
-			
-				sudo apt-get install openjdk-17-jre -y
-				clear
-				
-				echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Java instalado com sucesso."
-				sleep 1
-		else
-			echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Infelizmente nosso sistema precisa de Java para rodar, mas se mudar de ideia, só me executar novamente ;)"
-		fi		
+		echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Fico feliz que optou por instalar o Java, irei atualizar os pacotes, aguarde um instante..."
+		sleep 2
+		
+		sudo apt update -y
+		clear
+		
+		echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Instalando Java..."
+		sleep 2
+	
+		sudo apt-get install openjdk-17-jre -y
+		clear
+		
+		echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Java instalado com sucesso."
+		sleep 1		
 fi
 
 
