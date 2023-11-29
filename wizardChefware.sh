@@ -95,8 +95,8 @@ sleep 2
 
 if [ \"$escolha1\" == \"y\" ]
 	then
-		cd ../ChefwareLooca && chmod +x chefware-0.0.1-SNAPSHOT.jar
-		java -jar chefware-0.0.1-SNAPSHOT.jar
+		cd ../ChefwareLooca && chmod +x chefware-1.0.0.jar
+		java -jar chefware-1.0.0.jar
 
 fi
 
