@@ -61,12 +61,14 @@ if [ $? -eq 0 ]
 		fi		
 fi
 
-adduser chefware
+
+echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Digite o token de acesso que enviamos no seu e-mail"
+read token
 
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7) Aguarde um momento enquanto baixamos o sistema Chefware na sua máquina :)"
 sleep 2
 
-git clone https://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:x-oauth-basic@github.com/chefware/chefware-jar.git
+git clone https://$token:x-oauth-basic@github.com/chefware/chefware-jar.git
 
 clear
 echo "$(tput setaf 4)[Wizard Chefware]: $(tput setaf 7)Irei configurar o seu banco de dados, aguarde um instante"
